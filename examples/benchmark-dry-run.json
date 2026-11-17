@@ -1,0 +1,2333 @@
+{
+  "mode": "dry-run",
+  "model_configured": false,
+  "budget": {
+    "seconds": 900,
+    "llm_tokens": 16000,
+    "repairs": 3
+  },
+  "strategies": {
+    "deterministic": {
+      "metrics": {
+        "cases": 23,
+        "validated_completion_rate": null,
+        "functional_regression_rate": null,
+        "held_out_test_pass_rate": null,
+        "repair_success_rate": null,
+        "validation_coverage": null,
+        "p50_seconds": 0.077,
+        "p95_seconds": 0.114,
+        "changed_lines": 70,
+        "llm_tokens_charged": 0
+      },
+      "cases": [
+        {
+          "id": "customer-catalog",
+          "job_id": "c795cc7ce277406e87c77915e829c09c",
+          "held_out": false,
+          "expected": "Validate aliases, field and root validators, parsing and serialization.",
+          "model_assistance_allowed": false,
+          "seconds": 0.178,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "models.py",
+              "additions": 2,
+              "deletions": 2
+            },
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for validator in models.py:23",
+            "Semantic review required for validator in models.py:11",
+            "Semantic review required for model-config in models.py:8"
+          ],
+          "snapshot": {
+            "label": "customer-catalog.zip",
+            "commit": null,
+            "sha256": "a717aafdaedf8b0d952bf494b7ef0e1029f5d526e26cef09f943bad445a8886d",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853164.189294
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "dump-requirements",
+          "job_id": "97c647c1209b426cade1e398534752a1",
+          "held_out": false,
+          "expected": "Inline serialization migrates mechanically.",
+          "model_assistance_allowed": false,
+          "seconds": 0.089,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "models.py",
+              "additions": 1,
+              "deletions": 1
+            },
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [],
+          "snapshot": {
+            "label": "dump-requirements.zip",
+            "commit": null,
+            "sha256": "dc4a97ec0364caeae0d0ed61dd876917d65f5c21a985e8cb4b83096947ee12f7",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853164.6968
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "dump-pyproject",
+          "job_id": "c7b35b20e5de4e089a652a96b0a73236",
+          "held_out": false,
+          "expected": "Inline serialization migrates mechanically.",
+          "model_assistance_allowed": false,
+          "seconds": 0.094,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "models.py",
+              "additions": 1,
+              "deletions": 1
+            },
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [],
+          "snapshot": {
+            "label": "dump-pyproject.zip",
+            "commit": null,
+            "sha256": "0ea60f28f73e8203b107e47390fad00bdc5439ea112d6164a0f74cdbd56944d3",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853164.979007
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "parse-requirements",
+          "job_id": "dd6667202aa142279e0c7ae327692118",
+          "held_out": false,
+          "expected": "Known parse_obj receiver migrates mechanically.",
+          "model_assistance_allowed": false,
+          "seconds": 0.092,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "models.py",
+              "additions": 1,
+              "deletions": 1
+            },
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [],
+          "snapshot": {
+            "label": "parse-requirements.zip",
+            "commit": null,
+            "sha256": "a24574cd66f2ace47d04150752f009d71b02b44fbad866ff402122255dc0214b",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853165.369896
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "parse-pyproject",
+          "job_id": "031005c4898f45769ff775c1fe450420",
+          "held_out": false,
+          "expected": "Known parse_obj receiver migrates mechanically.",
+          "model_assistance_allowed": false,
+          "seconds": 0.077,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "models.py",
+              "additions": 1,
+              "deletions": 1
+            },
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [],
+          "snapshot": {
+            "label": "parse-pyproject.zip",
+            "commit": null,
+            "sha256": "5061d5d6cec44ae337c83e7dbbf121352a7927dccd9270e8ccbe0458ce13461a",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853165.661226
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "json-requirements",
+          "job_id": "7b6fc18b909a45f69ff1146d8944a3e1",
+          "held_out": false,
+          "expected": "JSON representation needs semantic review.",
+          "model_assistance_allowed": false,
+          "seconds": 0.09,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-json in models.py:7"
+          ],
+          "snapshot": {
+            "label": "json-requirements.zip",
+            "commit": null,
+            "sha256": "27483c718ab359a2303464efe6659a42a46b9ace4a85ac04e4746b787696f196",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853165.91933
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "json-pyproject",
+          "job_id": "70054b56685849a2be4bc34fa2f9bd19",
+          "held_out": false,
+          "expected": "JSON representation needs semantic review.",
+          "model_assistance_allowed": false,
+          "seconds": 0.077,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-json in models.py:7"
+          ],
+          "snapshot": {
+            "label": "json-pyproject.zip",
+            "commit": null,
+            "sha256": "4caaa56ff56a2622a90d6e9357aef5ab0c394c51ac9fcaad2d6916830dc9c4a4",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853166.180915
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "schema-requirements",
+          "job_id": "8144ce1161364e5f93b3ae0562335ea5",
+          "held_out": false,
+          "expected": "Schema generation requires semantic review.",
+          "model_assistance_allowed": false,
+          "seconds": 0.076,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-schema in models.py:7"
+          ],
+          "snapshot": {
+            "label": "schema-requirements.zip",
+            "commit": null,
+            "sha256": "e20fd81b6f39ffa20b067969fc9096d2265bf64c44ff09e318ccd0ebcb9012b1",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853166.433131
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "schema-pyproject",
+          "job_id": "827e8c5f9b734cdd8e98024c98f5ef98",
+          "held_out": false,
+          "expected": "Schema generation requires semantic review.",
+          "model_assistance_allowed": false,
+          "seconds": 0.072,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-schema in models.py:7"
+          ],
+          "snapshot": {
+            "label": "schema-pyproject.zip",
+            "commit": null,
+            "sha256": "8df570b1de3ecde715a2f626f49ad291ec8e63a7b9c04902bf1d52bcab92bc7a",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853166.689526
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "shadow-requirements",
+          "job_id": "c3152896c41b402eb61f7bd86b0cfa47",
+          "held_out": false,
+          "expected": "Unrelated dictionary operation remains unchanged.",
+          "model_assistance_allowed": false,
+          "seconds": 0.08,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [],
+          "snapshot": {
+            "label": "shadow-requirements.zip",
+            "commit": null,
+            "sha256": "4ce9aafa10322d3721877a3fe4d1b67a39c8459735ff751027fa6124c88d119a",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853166.948027
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "shadow-pyproject",
+          "job_id": "7c565c2d2ca9417e8b39090c953d54da",
+          "held_out": false,
+          "expected": "Unrelated dictionary operation remains unchanged.",
+          "model_assistance_allowed": false,
+          "seconds": 0.059,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [],
+          "snapshot": {
+            "label": "shadow-pyproject.zip",
+            "commit": null,
+            "sha256": "2f49c2a38adf308b385c0d46de53d678f2488ec30535f50ba1e725c6f5bd6023",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853167.204069
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "options-requirements",
+          "job_id": "dc31390016cd4dc3a4125ac8d1b2be05",
+          "held_out": false,
+          "expected": "Supported dump keyword is preserved.",
+          "model_assistance_allowed": false,
+          "seconds": 0.076,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "models.py",
+              "additions": 1,
+              "deletions": 1
+            },
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [],
+          "snapshot": {
+            "label": "options-requirements.zip",
+            "commit": null,
+            "sha256": "acf1dde11bd3b12ba4e77d45167a9c046ff6f677d77f8e7e963e7bcf4f918b74",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853167.514112
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "options-pyproject",
+          "job_id": "5cf59cfbf99742c187c6169eaa739b0f",
+          "held_out": false,
+          "expected": "Supported dump keyword is preserved.",
+          "model_assistance_allowed": false,
+          "seconds": 0.086,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "models.py",
+              "additions": 1,
+              "deletions": 1
+            },
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [],
+          "snapshot": {
+            "label": "options-pyproject.zip",
+            "commit": null,
+            "sha256": "acb4ad79af9dd520fd1c77e44a7b1e63d1b6e2c929474953ea17eb6230595c27",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853167.760572
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "raw-requirements",
+          "job_id": "d229db39b5b3489f8d00563e76dc2316",
+          "held_out": false,
+          "expected": "Raw data handling needs semantic review.",
+          "model_assistance_allowed": false,
+          "seconds": 0.069,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-parse_raw in models.py:7"
+          ],
+          "snapshot": {
+            "label": "raw-requirements.zip",
+            "commit": null,
+            "sha256": "e7d8593bae83d987f79db872a8c1f5f062e49d6e14c2bd6a67b1c6c483cab8cb",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853168.04393
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "raw-pyproject",
+          "job_id": "d7ef24f3e65e4c66845b22f3e9852811",
+          "held_out": false,
+          "expected": "Raw data handling needs semantic review.",
+          "model_assistance_allowed": false,
+          "seconds": 0.071,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-parse_raw in models.py:7"
+          ],
+          "snapshot": {
+            "label": "raw-pyproject.zip",
+            "commit": null,
+            "sha256": "8d67ef39cacdac92fac19b5390e0c747996e5dd410c811fa2ec16b8592be4498",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853168.272122
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "copy-requirements",
+          "job_id": "47754beb2e1340c0ba3afe0b7e6bf6ad",
+          "held_out": false,
+          "expected": "Copy behavior needs semantic review.",
+          "model_assistance_allowed": false,
+          "seconds": 0.07,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-copy in models.py:7"
+          ],
+          "snapshot": {
+            "label": "copy-requirements.zip",
+            "commit": null,
+            "sha256": "1110daf0b6f0c772501175b321e43d204e3387d7c2379692ad3ffca63bf4ce5e",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853168.498805
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "copy-pyproject",
+          "job_id": "9f8c7c6df44242f58b4617aeb5f01dc1",
+          "held_out": false,
+          "expected": "Copy behavior needs semantic review.",
+          "model_assistance_allowed": false,
+          "seconds": 0.084,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-copy in models.py:7"
+          ],
+          "snapshot": {
+            "label": "copy-pyproject.zip",
+            "commit": null,
+            "sha256": "5205d0935ee4d8d0ac4b38ab3fd35e34b13b40f32f8c9267f3594e74e24fde9a",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853168.722311
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "custom-requirements",
+          "job_id": "f5e93883998f4a489444564d6235fc48",
+          "held_out": false,
+          "expected": "Indented output needs semantic review.",
+          "model_assistance_allowed": false,
+          "seconds": 0.072,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-json in models.py:7"
+          ],
+          "snapshot": {
+            "label": "custom-requirements.zip",
+            "commit": null,
+            "sha256": "8ab8726e2795678cbe0809518aa220c946931ffd438ff21985db48fe73d29a20",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853168.965802
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "custom-pyproject",
+          "job_id": "b9409f53250b4d139f8f53087c856e9c",
+          "held_out": false,
+          "expected": "Indented output needs semantic review.",
+          "model_assistance_allowed": false,
+          "seconds": 0.064,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-json in models.py:7"
+          ],
+          "snapshot": {
+            "label": "custom-pyproject.zip",
+            "commit": null,
+            "sha256": "758ae5be61c95b6a24494307869573f6ad685aa3302c95e448dfd6f9b53ec269",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853169.203908
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "alias-requirements",
+          "job_id": "9ac2195943e64a0ba83ea5c5cbc5426a",
+          "held_out": true,
+          "expected": "Alias flag is preserved.",
+          "model_assistance_allowed": false,
+          "seconds": 0.076,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "models.py",
+              "additions": 1,
+              "deletions": 1
+            },
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [],
+          "snapshot": {
+            "label": "alias-requirements.zip",
+            "commit": null,
+            "sha256": "6a2e1e434d301fe9d9710b27216b5e0bef03af2c1c5e49afb6363726cb72db14",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853169.517021
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "alias-pyproject",
+          "job_id": "ea167db188f944329916446eeb65e9cc",
+          "held_out": true,
+          "expected": "Alias flag is preserved.",
+          "model_assistance_allowed": false,
+          "seconds": 0.114,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "models.py",
+              "additions": 1,
+              "deletions": 1
+            },
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [],
+          "snapshot": {
+            "label": "alias-pyproject.zip",
+            "commit": null,
+            "sha256": "c974e984b30c22c7175e38e122c4210a82c6486382a35a37371386be241b6d93",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853169.816091
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "coercion-requirements",
+          "job_id": "d349869e391b46829e062b1ab73dd8a9",
+          "held_out": true,
+          "expected": "Integer string coercion is checked.",
+          "model_assistance_allowed": false,
+          "seconds": 0.092,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "models.py",
+              "additions": 1,
+              "deletions": 1
+            },
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [],
+          "snapshot": {
+            "label": "coercion-requirements.zip",
+            "commit": null,
+            "sha256": "31fdfb55fbea657b9c9df554e6c474289ddfa0a4181c1c57f1c516339e52a7ef",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853170.122998
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "coercion-pyproject",
+          "job_id": "fb06b8bf1b5a436b883b3b89742f2858",
+          "held_out": true,
+          "expected": "Integer string coercion is checked.",
+          "model_assistance_allowed": false,
+          "seconds": 0.099,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "models.py",
+              "additions": 1,
+              "deletions": 1
+            },
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [],
+          "snapshot": {
+            "label": "coercion-pyproject.zip",
+            "commit": null,
+            "sha256": "1c2c5a5e8cd931faf00eaa9988fc8bae449f8f256dac9367d9b891793b6a25f6",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853170.435073
+          },
+          "llm_tokens": 0
+        }
+      ]
+    },
+    "llm-only": {
+      "metrics": {
+        "cases": 23,
+        "validated_completion_rate": null,
+        "functional_regression_rate": null,
+        "held_out_test_pass_rate": null,
+        "repair_success_rate": null,
+        "validation_coverage": null,
+        "p50_seconds": 0.07,
+        "p95_seconds": 0.124,
+        "changed_lines": 46,
+        "llm_tokens_charged": 0
+      },
+      "cases": [
+        {
+          "id": "customer-catalog",
+          "job_id": "48bc4ab89cf748008226e124c2bc14aa",
+          "held_out": false,
+          "expected": "Validate aliases, field and root validators, parsing and serialization.",
+          "model_assistance_allowed": true,
+          "seconds": 0.124,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-dict in models.py:35",
+            "Semantic review required for api-parse_obj in models.py:31",
+            "Semantic review required for validator in models.py:23",
+            "Semantic review required for validator in models.py:11",
+            "Semantic review required for model-config in models.py:8"
+          ],
+          "snapshot": {
+            "label": "customer-catalog.zip",
+            "commit": null,
+            "sha256": "a717aafdaedf8b0d952bf494b7ef0e1029f5d526e26cef09f943bad445a8886d",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853164.387766
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "dump-requirements",
+          "job_id": "472c033321a249089cf47060c8a1ab67",
+          "held_out": false,
+          "expected": "Inline serialization migrates mechanically.",
+          "model_assistance_allowed": true,
+          "seconds": 0.069,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-dict in models.py:7"
+          ],
+          "snapshot": {
+            "label": "dump-requirements.zip",
+            "commit": null,
+            "sha256": "dc4a97ec0364caeae0d0ed61dd876917d65f5c21a985e8cb4b83096947ee12f7",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853164.796762
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "dump-pyproject",
+          "job_id": "67318697e2ae4040903db4a7ee1a1bd9",
+          "held_out": false,
+          "expected": "Inline serialization migrates mechanically.",
+          "model_assistance_allowed": true,
+          "seconds": 0.093,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-dict in models.py:7"
+          ],
+          "snapshot": {
+            "label": "dump-pyproject.zip",
+            "commit": null,
+            "sha256": "0ea60f28f73e8203b107e47390fad00bdc5439ea112d6164a0f74cdbd56944d3",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853165.082795
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "parse-requirements",
+          "job_id": "37d3fb65bcf24cabb55d1f217bdbb2e2",
+          "held_out": false,
+          "expected": "Known parse_obj receiver migrates mechanically.",
+          "model_assistance_allowed": true,
+          "seconds": 0.073,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-parse_obj in models.py:7"
+          ],
+          "snapshot": {
+            "label": "parse-requirements.zip",
+            "commit": null,
+            "sha256": "a24574cd66f2ace47d04150752f009d71b02b44fbad866ff402122255dc0214b",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853165.470084
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "parse-pyproject",
+          "job_id": "2d27c6d9a673426c8fa48fa80645a066",
+          "held_out": false,
+          "expected": "Known parse_obj receiver migrates mechanically.",
+          "model_assistance_allowed": true,
+          "seconds": 0.07,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-parse_obj in models.py:7"
+          ],
+          "snapshot": {
+            "label": "parse-pyproject.zip",
+            "commit": null,
+            "sha256": "5061d5d6cec44ae337c83e7dbbf121352a7927dccd9270e8ccbe0458ce13461a",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853165.749401
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "json-requirements",
+          "job_id": "65324df096614526a98ff244d588965a",
+          "held_out": false,
+          "expected": "JSON representation needs semantic review.",
+          "model_assistance_allowed": true,
+          "seconds": 0.067,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-json in models.py:7"
+          ],
+          "snapshot": {
+            "label": "json-requirements.zip",
+            "commit": null,
+            "sha256": "27483c718ab359a2303464efe6659a42a46b9ace4a85ac04e4746b787696f196",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853166.01855
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "json-pyproject",
+          "job_id": "0d3ba09b252341b190e2aa32cb35732e",
+          "held_out": false,
+          "expected": "JSON representation needs semantic review.",
+          "model_assistance_allowed": true,
+          "seconds": 0.071,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-json in models.py:7"
+          ],
+          "snapshot": {
+            "label": "json-pyproject.zip",
+            "commit": null,
+            "sha256": "4caaa56ff56a2622a90d6e9357aef5ab0c394c51ac9fcaad2d6916830dc9c4a4",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853166.266081
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "schema-requirements",
+          "job_id": "a795845fb9e9479dac02df28316e3011",
+          "held_out": false,
+          "expected": "Schema generation requires semantic review.",
+          "model_assistance_allowed": true,
+          "seconds": 0.07,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-schema in models.py:7"
+          ],
+          "snapshot": {
+            "label": "schema-requirements.zip",
+            "commit": null,
+            "sha256": "e20fd81b6f39ffa20b067969fc9096d2265bf64c44ff09e318ccd0ebcb9012b1",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853166.517553
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "schema-pyproject",
+          "job_id": "1ccde0b727c4471bb79a2a24f3354710",
+          "held_out": false,
+          "expected": "Schema generation requires semantic review.",
+          "model_assistance_allowed": true,
+          "seconds": 0.068,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-schema in models.py:7"
+          ],
+          "snapshot": {
+            "label": "schema-pyproject.zip",
+            "commit": null,
+            "sha256": "8df570b1de3ecde715a2f626f49ad291ec8e63a7b9c04902bf1d52bcab92bc7a",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853166.773475
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "shadow-requirements",
+          "job_id": "953984e6a492455aa956e5ece88d3550",
+          "held_out": false,
+          "expected": "Unrelated dictionary operation remains unchanged.",
+          "model_assistance_allowed": true,
+          "seconds": 0.081,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [],
+          "snapshot": {
+            "label": "shadow-requirements.zip",
+            "commit": null,
+            "sha256": "4ce9aafa10322d3721877a3fe4d1b67a39c8459735ff751027fa6124c88d119a",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853167.035676
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "shadow-pyproject",
+          "job_id": "7f442126ff8148e3a736d65eb3f1637f",
+          "held_out": false,
+          "expected": "Unrelated dictionary operation remains unchanged.",
+          "model_assistance_allowed": true,
+          "seconds": 0.15,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [],
+          "snapshot": {
+            "label": "shadow-pyproject.zip",
+            "commit": null,
+            "sha256": "2f49c2a38adf308b385c0d46de53d678f2488ec30535f50ba1e725c6f5bd6023",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853167.272023
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "options-requirements",
+          "job_id": "6a4c76330e6a496c85aa193040f31e45",
+          "held_out": false,
+          "expected": "Supported dump keyword is preserved.",
+          "model_assistance_allowed": true,
+          "seconds": 0.064,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-dict in models.py:7"
+          ],
+          "snapshot": {
+            "label": "options-requirements.zip",
+            "commit": null,
+            "sha256": "acf1dde11bd3b12ba4e77d45167a9c046ff6f677d77f8e7e963e7bcf4f918b74",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853167.599551
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "options-pyproject",
+          "job_id": "ea2559d46d1b42f8bbefe6af03ddec3f",
+          "held_out": false,
+          "expected": "Supported dump keyword is preserved.",
+          "model_assistance_allowed": true,
+          "seconds": 0.068,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-dict in models.py:7"
+          ],
+          "snapshot": {
+            "label": "options-pyproject.zip",
+            "commit": null,
+            "sha256": "acb4ad79af9dd520fd1c77e44a7b1e63d1b6e2c929474953ea17eb6230595c27",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853167.855805
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "raw-requirements",
+          "job_id": "8b26f353710e45feb469bb3d1ae6c56a",
+          "held_out": false,
+          "expected": "Raw data handling needs semantic review.",
+          "model_assistance_allowed": true,
+          "seconds": 0.058,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-parse_raw in models.py:7"
+          ],
+          "snapshot": {
+            "label": "raw-requirements.zip",
+            "commit": null,
+            "sha256": "e7d8593bae83d987f79db872a8c1f5f062e49d6e14c2bd6a67b1c6c483cab8cb",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853168.122335
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "raw-pyproject",
+          "job_id": "965920b0536a46e391c8a8ed6d6652f5",
+          "held_out": false,
+          "expected": "Raw data handling needs semantic review.",
+          "model_assistance_allowed": true,
+          "seconds": 0.064,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-parse_raw in models.py:7"
+          ],
+          "snapshot": {
+            "label": "raw-pyproject.zip",
+            "commit": null,
+            "sha256": "8d67ef39cacdac92fac19b5390e0c747996e5dd410c811fa2ec16b8592be4498",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853168.352551
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "copy-requirements",
+          "job_id": "d4cca50d76d14affa30f6d3d5c3aca77",
+          "held_out": false,
+          "expected": "Copy behavior needs semantic review.",
+          "model_assistance_allowed": true,
+          "seconds": 0.06,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-copy in models.py:7"
+          ],
+          "snapshot": {
+            "label": "copy-requirements.zip",
+            "commit": null,
+            "sha256": "1110daf0b6f0c772501175b321e43d204e3387d7c2379692ad3ffca63bf4ce5e",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853168.577845
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "copy-pyproject",
+          "job_id": "6718b993019442cdb73afd9bfc3ded70",
+          "held_out": false,
+          "expected": "Copy behavior needs semantic review.",
+          "model_assistance_allowed": true,
+          "seconds": 0.065,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-copy in models.py:7"
+          ],
+          "snapshot": {
+            "label": "copy-pyproject.zip",
+            "commit": null,
+            "sha256": "5205d0935ee4d8d0ac4b38ab3fd35e34b13b40f32f8c9267f3594e74e24fde9a",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853168.815845
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "custom-requirements",
+          "job_id": "efec5a8639f643d481288a22bd5c6eb7",
+          "held_out": false,
+          "expected": "Indented output needs semantic review.",
+          "model_assistance_allowed": true,
+          "seconds": 0.066,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-json in models.py:7"
+          ],
+          "snapshot": {
+            "label": "custom-requirements.zip",
+            "commit": null,
+            "sha256": "8ab8726e2795678cbe0809518aa220c946931ffd438ff21985db48fe73d29a20",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853169.04605
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "custom-pyproject",
+          "job_id": "40d655e12a774311a4a6f84614b7e785",
+          "held_out": false,
+          "expected": "Indented output needs semantic review.",
+          "model_assistance_allowed": true,
+          "seconds": 0.06,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-json in models.py:7"
+          ],
+          "snapshot": {
+            "label": "custom-pyproject.zip",
+            "commit": null,
+            "sha256": "758ae5be61c95b6a24494307869573f6ad685aa3302c95e448dfd6f9b53ec269",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853169.276562
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "alias-requirements",
+          "job_id": "68b668a3620d4e609cefc98447576583",
+          "held_out": true,
+          "expected": "Alias flag is preserved.",
+          "model_assistance_allowed": false,
+          "seconds": 0.084,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-dict in models.py:7"
+          ],
+          "snapshot": {
+            "label": "alias-requirements.zip",
+            "commit": null,
+            "sha256": "6a2e1e434d301fe9d9710b27216b5e0bef03af2c1c5e49afb6363726cb72db14",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853169.602718
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "alias-pyproject",
+          "job_id": "76588196cf15472fb4bb42a037667821",
+          "held_out": true,
+          "expected": "Alias flag is preserved.",
+          "model_assistance_allowed": false,
+          "seconds": 0.072,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-dict in models.py:7"
+          ],
+          "snapshot": {
+            "label": "alias-pyproject.zip",
+            "commit": null,
+            "sha256": "c974e984b30c22c7175e38e122c4210a82c6486382a35a37371386be241b6d93",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853169.942359
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "coercion-requirements",
+          "job_id": "df52fe27bc034736b669de833a2ec6b5",
+          "held_out": true,
+          "expected": "Integer string coercion is checked.",
+          "model_assistance_allowed": false,
+          "seconds": 0.091,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-parse_obj in models.py:7"
+          ],
+          "snapshot": {
+            "label": "coercion-requirements.zip",
+            "commit": null,
+            "sha256": "31fdfb55fbea657b9c9df554e6c474289ddfa0a4181c1c57f1c516339e52a7ef",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853170.23139
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "coercion-pyproject",
+          "job_id": "581e203d27254926a25a2ad285631459",
+          "held_out": true,
+          "expected": "Integer string coercion is checked.",
+          "model_assistance_allowed": false,
+          "seconds": 0.099,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-parse_obj in models.py:7"
+          ],
+          "snapshot": {
+            "label": "coercion-pyproject.zip",
+            "commit": null,
+            "sha256": "1c2c5a5e8cd931faf00eaa9988fc8bae449f8f256dac9367d9b891793b6a25f6",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853170.544138
+          },
+          "llm_tokens": 0
+        }
+      ]
+    },
+    "hybrid": {
+      "metrics": {
+        "cases": 23,
+        "validated_completion_rate": null,
+        "functional_regression_rate": null,
+        "held_out_test_pass_rate": null,
+        "repair_success_rate": null,
+        "validation_coverage": null,
+        "p50_seconds": 0.081,
+        "p95_seconds": 0.157,
+        "changed_lines": 70,
+        "llm_tokens_charged": 0
+      },
+      "cases": [
+        {
+          "id": "customer-catalog",
+          "job_id": "05c4e06198a74cf98c06d326d3628f1d",
+          "held_out": false,
+          "expected": "Validate aliases, field and root validators, parsing and serialization.",
+          "model_assistance_allowed": true,
+          "seconds": 0.157,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "models.py",
+              "additions": 2,
+              "deletions": 2
+            },
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for validator in models.py:23",
+            "Semantic review required for validator in models.py:11",
+            "Semantic review required for model-config in models.py:8"
+          ],
+          "snapshot": {
+            "label": "customer-catalog.zip",
+            "commit": null,
+            "sha256": "a717aafdaedf8b0d952bf494b7ef0e1029f5d526e26cef09f943bad445a8886d",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853164.527569
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "dump-requirements",
+          "job_id": "640cd0adb15c4c17a9da9ab819f4af37",
+          "held_out": false,
+          "expected": "Inline serialization migrates mechanically.",
+          "model_assistance_allowed": true,
+          "seconds": 0.091,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "models.py",
+              "additions": 1,
+              "deletions": 1
+            },
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [],
+          "snapshot": {
+            "label": "dump-requirements.zip",
+            "commit": null,
+            "sha256": "dc4a97ec0364caeae0d0ed61dd876917d65f5c21a985e8cb4b83096947ee12f7",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853164.878108
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "dump-pyproject",
+          "job_id": "31286fea0a0d4b06a1651661afb1423b",
+          "held_out": false,
+          "expected": "Inline serialization migrates mechanically.",
+          "model_assistance_allowed": true,
+          "seconds": 0.116,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "models.py",
+              "additions": 1,
+              "deletions": 1
+            },
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [],
+          "snapshot": {
+            "label": "dump-pyproject.zip",
+            "commit": null,
+            "sha256": "0ea60f28f73e8203b107e47390fad00bdc5439ea112d6164a0f74cdbd56944d3",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853165.239069
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "parse-requirements",
+          "job_id": "eeac23c9547a46099e3bbc4075756b05",
+          "held_out": false,
+          "expected": "Known parse_obj receiver migrates mechanically.",
+          "model_assistance_allowed": true,
+          "seconds": 0.094,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "models.py",
+              "additions": 1,
+              "deletions": 1
+            },
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [],
+          "snapshot": {
+            "label": "parse-requirements.zip",
+            "commit": null,
+            "sha256": "a24574cd66f2ace47d04150752f009d71b02b44fbad866ff402122255dc0214b",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853165.552418
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "parse-pyproject",
+          "job_id": "97ba0d43ba85455387287e342ddf0170",
+          "held_out": false,
+          "expected": "Known parse_obj receiver migrates mechanically.",
+          "model_assistance_allowed": true,
+          "seconds": 0.081,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "models.py",
+              "additions": 1,
+              "deletions": 1
+            },
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [],
+          "snapshot": {
+            "label": "parse-pyproject.zip",
+            "commit": null,
+            "sha256": "5061d5d6cec44ae337c83e7dbbf121352a7927dccd9270e8ccbe0458ce13461a",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853165.829452
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "json-requirements",
+          "job_id": "0c05d5a29d0040c9b878b5d9362c002d",
+          "held_out": false,
+          "expected": "JSON representation needs semantic review.",
+          "model_assistance_allowed": true,
+          "seconds": 0.075,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-json in models.py:7"
+          ],
+          "snapshot": {
+            "label": "json-requirements.zip",
+            "commit": null,
+            "sha256": "27483c718ab359a2303464efe6659a42a46b9ace4a85ac04e4746b787696f196",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853166.096916
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "json-pyproject",
+          "job_id": "c42183caf78146779d9efb1fcbc434a6",
+          "held_out": false,
+          "expected": "JSON representation needs semantic review.",
+          "model_assistance_allowed": true,
+          "seconds": 0.078,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-json in models.py:7"
+          ],
+          "snapshot": {
+            "label": "json-pyproject.zip",
+            "commit": null,
+            "sha256": "4caaa56ff56a2622a90d6e9357aef5ab0c394c51ac9fcaad2d6916830dc9c4a4",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853166.346803
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "schema-requirements",
+          "job_id": "f3ee433ef4d042f58fff64388ef0715b",
+          "held_out": false,
+          "expected": "Schema generation requires semantic review.",
+          "model_assistance_allowed": true,
+          "seconds": 0.079,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-schema in models.py:7"
+          ],
+          "snapshot": {
+            "label": "schema-requirements.zip",
+            "commit": null,
+            "sha256": "e20fd81b6f39ffa20b067969fc9096d2265bf64c44ff09e318ccd0ebcb9012b1",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853166.600243
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "schema-pyproject",
+          "job_id": "2031acce9dd64717ba11355013ceede0",
+          "held_out": false,
+          "expected": "Schema generation requires semantic review.",
+          "model_assistance_allowed": true,
+          "seconds": 0.09,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-schema in models.py:7"
+          ],
+          "snapshot": {
+            "label": "schema-pyproject.zip",
+            "commit": null,
+            "sha256": "8df570b1de3ecde715a2f626f49ad291ec8e63a7b9c04902bf1d52bcab92bc7a",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853166.850274
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "shadow-requirements",
+          "job_id": "c1f9a68542c74235aa7942394a1c6cbe",
+          "held_out": false,
+          "expected": "Unrelated dictionary operation remains unchanged.",
+          "model_assistance_allowed": true,
+          "seconds": 0.067,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [],
+          "snapshot": {
+            "label": "shadow-requirements.zip",
+            "commit": null,
+            "sha256": "4ce9aafa10322d3721877a3fe4d1b67a39c8459735ff751027fa6124c88d119a",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853167.125854
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "shadow-pyproject",
+          "job_id": "2f994d7d153341a0959d78a90e05cbf3",
+          "held_out": false,
+          "expected": "Unrelated dictionary operation remains unchanged.",
+          "model_assistance_allowed": true,
+          "seconds": 0.071,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [],
+          "snapshot": {
+            "label": "shadow-pyproject.zip",
+            "commit": null,
+            "sha256": "2f49c2a38adf308b385c0d46de53d678f2488ec30535f50ba1e725c6f5bd6023",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853167.433707
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "options-requirements",
+          "job_id": "b7664334d69d4331a165722b6cd3d390",
+          "held_out": false,
+          "expected": "Supported dump keyword is preserved.",
+          "model_assistance_allowed": true,
+          "seconds": 0.077,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "models.py",
+              "additions": 1,
+              "deletions": 1
+            },
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [],
+          "snapshot": {
+            "label": "options-requirements.zip",
+            "commit": null,
+            "sha256": "acf1dde11bd3b12ba4e77d45167a9c046ff6f677d77f8e7e963e7bcf4f918b74",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853167.673767
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "options-pyproject",
+          "job_id": "6027b802accd47908b5f4d23487685fb",
+          "held_out": false,
+          "expected": "Supported dump keyword is preserved.",
+          "model_assistance_allowed": true,
+          "seconds": 0.101,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "models.py",
+              "additions": 1,
+              "deletions": 1
+            },
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [],
+          "snapshot": {
+            "label": "options-pyproject.zip",
+            "commit": null,
+            "sha256": "acb4ad79af9dd520fd1c77e44a7b1e63d1b6e2c929474953ea17eb6230595c27",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853167.93384
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "raw-requirements",
+          "job_id": "e072c1349cd54957a6d76276deb80036",
+          "held_out": false,
+          "expected": "Raw data handling needs semantic review.",
+          "model_assistance_allowed": true,
+          "seconds": 0.071,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-parse_raw in models.py:7"
+          ],
+          "snapshot": {
+            "label": "raw-requirements.zip",
+            "commit": null,
+            "sha256": "e7d8593bae83d987f79db872a8c1f5f062e49d6e14c2bd6a67b1c6c483cab8cb",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853168.18969
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "raw-pyproject",
+          "job_id": "9de5c421a4c04b718d686eca32d8bda4",
+          "held_out": false,
+          "expected": "Raw data handling needs semantic review.",
+          "model_assistance_allowed": true,
+          "seconds": 0.06,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-parse_raw in models.py:7"
+          ],
+          "snapshot": {
+            "label": "raw-pyproject.zip",
+            "commit": null,
+            "sha256": "8d67ef39cacdac92fac19b5390e0c747996e5dd410c811fa2ec16b8592be4498",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853168.428121
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "copy-requirements",
+          "job_id": "2eee06914c794a71bb28ab0ba65c219f",
+          "held_out": false,
+          "expected": "Copy behavior needs semantic review.",
+          "model_assistance_allowed": true,
+          "seconds": 0.069,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-copy in models.py:7"
+          ],
+          "snapshot": {
+            "label": "copy-requirements.zip",
+            "commit": null,
+            "sha256": "1110daf0b6f0c772501175b321e43d204e3387d7c2379692ad3ffca63bf4ce5e",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853168.645759
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "copy-pyproject",
+          "job_id": "842a3623b509430197ae8732aad844c3",
+          "held_out": false,
+          "expected": "Copy behavior needs semantic review.",
+          "model_assistance_allowed": true,
+          "seconds": 0.067,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-copy in models.py:7"
+          ],
+          "snapshot": {
+            "label": "copy-pyproject.zip",
+            "commit": null,
+            "sha256": "5205d0935ee4d8d0ac4b38ab3fd35e34b13b40f32f8c9267f3594e74e24fde9a",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853168.888211
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "custom-requirements",
+          "job_id": "19927c1ca6064ed5917b63d17f7f0758",
+          "held_out": false,
+          "expected": "Indented output needs semantic review.",
+          "model_assistance_allowed": true,
+          "seconds": 0.073,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-json in models.py:7"
+          ],
+          "snapshot": {
+            "label": "custom-requirements.zip",
+            "commit": null,
+            "sha256": "8ab8726e2795678cbe0809518aa220c946931ffd438ff21985db48fe73d29a20",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853169.122138
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "custom-pyproject",
+          "job_id": "7fc23a9c9eac4a73bafd4981476e61ad",
+          "held_out": false,
+          "expected": "Indented output needs semantic review.",
+          "model_assistance_allowed": true,
+          "seconds": 0.161,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [
+            "Semantic review required for api-json in models.py:7"
+          ],
+          "snapshot": {
+            "label": "custom-pyproject.zip",
+            "commit": null,
+            "sha256": "758ae5be61c95b6a24494307869573f6ad685aa3302c95e448dfd6f9b53ec269",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853169.345551
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "alias-requirements",
+          "job_id": "eb348f16f0e64af489280fe3b84a8062",
+          "held_out": true,
+          "expected": "Alias flag is preserved.",
+          "model_assistance_allowed": false,
+          "seconds": 0.109,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "models.py",
+              "additions": 1,
+              "deletions": 1
+            },
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [],
+          "snapshot": {
+            "label": "alias-requirements.zip",
+            "commit": null,
+            "sha256": "6a2e1e434d301fe9d9710b27216b5e0bef03af2c1c5e49afb6363726cb72db14",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853169.696524
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "alias-pyproject",
+          "job_id": "28bf7b6d028a40019ca7eec21e19f301",
+          "held_out": true,
+          "expected": "Alias flag is preserved.",
+          "model_assistance_allowed": false,
+          "seconds": 0.088,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "models.py",
+              "additions": 1,
+              "deletions": 1
+            },
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [],
+          "snapshot": {
+            "label": "alias-pyproject.zip",
+            "commit": null,
+            "sha256": "c974e984b30c22c7175e38e122c4210a82c6486382a35a37371386be241b6d93",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853170.023311
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "coercion-requirements",
+          "job_id": "573691e16ab84bcc8f506d83b7d54df9",
+          "held_out": true,
+          "expected": "Integer string coercion is checked.",
+          "model_assistance_allowed": false,
+          "seconds": 0.087,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "models.py",
+              "additions": 1,
+              "deletions": 1
+            },
+            {
+              "path": "requirements.txt",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [],
+          "snapshot": {
+            "label": "coercion-requirements.zip",
+            "commit": null,
+            "sha256": "31fdfb55fbea657b9c9df554e6c474289ddfa0a4181c1c57f1c516339e52a7ef",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853170.338697
+          },
+          "llm_tokens": 0
+        },
+        {
+          "id": "coercion-pyproject",
+          "job_id": "d84c5564cda243bd80d52809471adf5d",
+          "held_out": true,
+          "expected": "Integer string coercion is checked.",
+          "model_assistance_allowed": false,
+          "seconds": 0.096,
+          "state": "READY_FOR_REVIEW_WITH_WARNINGS",
+          "baseline": [],
+          "post": [],
+          "comparison": [],
+          "repairs": [],
+          "files": [
+            {
+              "path": "models.py",
+              "additions": 1,
+              "deletions": 1
+            },
+            {
+              "path": "pyproject.toml",
+              "additions": 1,
+              "deletions": 1
+            }
+          ],
+          "issues": [],
+          "snapshot": {
+            "label": "coercion-pyproject.zip",
+            "commit": null,
+            "sha256": "1c2c5a5e8cd931faf00eaa9988fc8bae449f8f256dac9367d9b891793b6a25f6",
+            "ref": null,
+            "language": "Python",
+            "captured_at": 1794853170.654689
+          },
+          "llm_tokens": 0
+        }
+      ]
+    }
+  }
+}

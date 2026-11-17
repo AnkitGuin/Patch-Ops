@@ -1,0 +1,14 @@
+pytest==8.4.2
+ruff==0.13.3
+mypy==1.18.2
+setuptools==80.9.0
+wheel==0.45.1
+annotated-types==0.8.0
+iniconfig==2.3.1
+mypy-extensions==1.2.0
+packaging==26.3
+pathspec==1.1.1
+pluggy==1.7.0
+Pygments==2.21.0
+typing-extensions==4.16.0
+typing-inspection==0.4.5

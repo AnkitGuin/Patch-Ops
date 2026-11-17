@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=75,<85"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "patchops"
+version = "0.1.0"
+description = "Reviewable, sandbox-validated Pydantic migrations"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "alembic>=1.14,<2", "fastapi>=0.115,<1", "httpx>=0.28,<1",
+  "libcst>=1.5,<2", "packaging>=24,<27", "psycopg[binary]>=3.2,<4",
+  "pydantic>=2.10,<3", "pydantic-settings>=2.7,<3",
+  "python-multipart>=0.0.20,<1", "sqlalchemy>=2,<3",
+  "streamlit>=1.42,<2", "uvicorn>=0.34,<1",
+]
+
+[dependency-groups]
+dev = ["mypy>=1.15,<2", "pytest>=8,<10", "ruff>=0.11,<1"]
+
+[project.scripts]
+patchops = "patchops.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+extend-exclude = ["fixtures"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["docker: runs target repositories inside Docker"]
+
+[tool.mypy]
+python_version = "3.12"
+check_untyped_defs = true
+warn_unused_ignores = true

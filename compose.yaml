@@ -1,0 +1,65 @@
+name: patchops
+x-runtime: &runtime
+  build: .
+  environment: &runtime-env
+    PATCHOPS_DATABASE_URL: postgresql+psycopg://patchops:patchops@db:5432/patchops
+    PATCHOPS_DATA_ROOT: /data
+    PATCHOPS_ALLOWED_ROOTS: '["/repos"]'
+    PATCHOPS_API_TOKEN: ${PATCHOPS_API_TOKEN:?set PATCHOPS_API_TOKEN in .env}
+    PATCHOPS_LLM_API_KEY: ${PATCHOPS_LLM_API_KEY:-}
+    PATCHOPS_LLM_MODEL: ${PATCHOPS_LLM_MODEL:-}
+    PATCHOPS_LLM_BASE_URL: ${PATCHOPS_LLM_BASE_URL:-https://api.openai.com/v1}
+    PATCHOPS_GITHUB_TOKEN: ${PATCHOPS_GITHUB_TOKEN:-}
+  volumes:
+    - data:/data
+    - ${PATCHOPS_REPOS_DIR:-./fixtures}:/repos:ro
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: patchops
+      POSTGRES_PASSWORD: patchops
+      POSTGRES_DB: patchops
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U patchops]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    volumes: [postgres:/var/lib/postgresql/data]
+  schema:
+    <<: *runtime
+    depends_on:
+      db:
+        condition: service_healthy
+    command: [alembic, upgrade, head]
+  api:
+    <<: *runtime
+    depends_on:
+      schema:
+        condition: service_completed_successfully
+    command: [uvicorn, "patchops.api:create_app", --factory, --no-proxy-headers, --host, 0.0.0.0, --port, "8000"]
+    ports: ["127.0.0.1:8000:8000"]
+  worker:
+    <<: *runtime
+    depends_on:
+      schema:
+        condition: service_completed_successfully
+    command: [python, -m, patchops.worker]
+    volumes:
+      - data:/data
+      - ${PATCHOPS_REPOS_DIR:-./fixtures}:/repos:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+  dashboard:
+    <<: *runtime
+    depends_on: [api]
+    environment:
+      <<: *runtime-env
+      PATCHOPS_API_URL: http://api:8000
+      PATCHOPS_LLM_API_KEY: ""
+      PATCHOPS_GITHUB_TOKEN: ""
+    volumes: []
+    command: [streamlit, run, src/patchops/dashboard.py, --server.address=0.0.0.0, --server.maxUploadSize=100]
+    ports: ["127.0.0.1:8501:8501"]
+volumes:
+  postgres:
+  data:

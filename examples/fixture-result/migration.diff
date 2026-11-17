@@ -1,0 +1,49 @@
+--- a/models.py
++++ b/models.py
+@@ -5,10 +5,13 @@
+     name: str
+     external_id: int = Field(alias="id")
+ 
+-    class Config:
+-        allow_population_by_field_name = True
++    from pydantic import ConfigDict as _ConfigDict
++    model_config = _ConfigDict(populate_by_name=True)
+ 
+-    @validator("name")
++    from pydantic import field_validator as _field_validator
++
++    @_field_validator("name")
++    @classmethod
+     def normalize(cls, value):
+         value = value.strip()
+         if not value:
+@@ -20,16 +23,18 @@
+     minimum: int
+     maximum: int
+ 
+-    @root_validator(skip_on_failure=True)
+-    def validate_bounds(cls, values):
+-        if values["minimum"] > values["maximum"]:
++    from pydantic import model_validator as _model_validator
++
++    @_model_validator(mode='after')
++    def validate_bounds(self):
++        if self.minimum > self.maximum:
+             raise ValueError("minimum cannot exceed maximum")
+-        return values
++        return self
+ 
+ 
+ def read_band(raw):
+-    return QuantityBand.parse_obj(raw)
++    return QuantityBand.model_validate(raw)
+ 
+ 
+ def summarize_customer(name, identifier):
+-    return Customer(name=name, id=identifier).dict(by_alias=True)
++    return Customer(name=name, id=identifier).model_dump(by_alias=True)
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -1 +1 @@
+-pydantic==1.10.22
++pydantic>=2,<3

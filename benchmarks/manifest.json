@@ -1,0 +1,185 @@
+{
+  "cases": [
+    {
+      "id": "customer-catalog",
+      "fixture": "customer_catalog",
+      "expected": "Validate aliases, field and root validators, parsing and serialization."
+    },
+    {
+      "id": "dump-requirements",
+      "source": "from pydantic import BaseModel\n\nclass Model(BaseModel):\n    value: int\n\ndef run(value):\n    return Model(value=value).dict()\n",
+      "dependency": "requirements",
+      "tests": "from models import run\n\ndef test_contract():\n    assert run(7) == {'value': 7}\n",
+      "held_out": false,
+      "expected": "Inline serialization migrates mechanically."
+    },
+    {
+      "id": "dump-pyproject",
+      "source": "from pydantic import BaseModel\n\nclass Model(BaseModel):\n    value: int\n\ndef run(value):\n    return Model(value=value).dict()\n",
+      "dependency": "pyproject",
+      "tests": "from models import run\n\ndef test_contract():\n    assert run(7) == {'value': 7}\n",
+      "held_out": false,
+      "expected": "Inline serialization migrates mechanically."
+    },
+    {
+      "id": "parse-requirements",
+      "source": "from pydantic import BaseModel\n\nclass Model(BaseModel):\n    value: int\n\ndef run(value):\n    return Model.parse_obj({'value': value}).value\n",
+      "dependency": "requirements",
+      "tests": "from models import run\n\ndef test_contract():\n    assert run(7) == 7\n",
+      "held_out": false,
+      "expected": "Known parse_obj receiver migrates mechanically."
+    },
+    {
+      "id": "parse-pyproject",
+      "source": "from pydantic import BaseModel\n\nclass Model(BaseModel):\n    value: int\n\ndef run(value):\n    return Model.parse_obj({'value': value}).value\n",
+      "dependency": "pyproject",
+      "tests": "from models import run\n\ndef test_contract():\n    assert run(7) == 7\n",
+      "held_out": false,
+      "expected": "Known parse_obj receiver migrates mechanically."
+    },
+    {
+      "id": "json-requirements",
+      "source": "from pydantic import BaseModel\n\nclass Model(BaseModel):\n    value: int\n\ndef run(value):\n    return Model(value=value).json()\n",
+      "dependency": "requirements",
+      "tests": "from models import run\n\ndef test_contract():\n    result = run(7)\n    assert result is not None\n",
+      "held_out": false,
+      "expected": "JSON representation needs semantic review."
+    },
+    {
+      "id": "json-pyproject",
+      "source": "from pydantic import BaseModel\n\nclass Model(BaseModel):\n    value: int\n\ndef run(value):\n    return Model(value=value).json()\n",
+      "dependency": "pyproject",
+      "tests": "from models import run\n\ndef test_contract():\n    result = run(7)\n    assert result is not None\n",
+      "held_out": false,
+      "expected": "JSON representation needs semantic review."
+    },
+    {
+      "id": "schema-requirements",
+      "source": "from pydantic import BaseModel\n\nclass Model(BaseModel):\n    value: int\n\ndef run(value):\n    return Model.schema()\n",
+      "dependency": "requirements",
+      "tests": "from models import run\n\ndef test_contract():\n    result = run(7)\n    assert result is not None\n",
+      "held_out": false,
+      "expected": "Schema generation requires semantic review."
+    },
+    {
+      "id": "schema-pyproject",
+      "source": "from pydantic import BaseModel\n\nclass Model(BaseModel):\n    value: int\n\ndef run(value):\n    return Model.schema()\n",
+      "dependency": "pyproject",
+      "tests": "from models import run\n\ndef test_contract():\n    result = run(7)\n    assert result is not None\n",
+      "held_out": false,
+      "expected": "Schema generation requires semantic review."
+    },
+    {
+      "id": "shadow-requirements",
+      "source": "from pydantic import BaseModel\n\nclass Model(BaseModel):\n    value: int\n\ndef run(value):\n    return {'value': value}.get('value')\n",
+      "dependency": "requirements",
+      "tests": "from models import run\n\ndef test_contract():\n    assert run(7) == 7\n",
+      "held_out": false,
+      "expected": "Unrelated dictionary operation remains unchanged."
+    },
+    {
+      "id": "shadow-pyproject",
+      "source": "from pydantic import BaseModel\n\nclass Model(BaseModel):\n    value: int\n\ndef run(value):\n    return {'value': value}.get('value')\n",
+      "dependency": "pyproject",
+      "tests": "from models import run\n\ndef test_contract():\n    assert run(7) == 7\n",
+      "held_out": false,
+      "expected": "Unrelated dictionary operation remains unchanged."
+    },
+    {
+      "id": "options-requirements",
+      "source": "from pydantic import BaseModel\n\nclass Model(BaseModel):\n    value: int\n\ndef run(value):\n    return Model(value=value).dict(exclude_none=True)\n",
+      "dependency": "requirements",
+      "tests": "from models import run\n\ndef test_contract():\n    assert run(7) == {'value': 7}\n",
+      "held_out": false,
+      "expected": "Supported dump keyword is preserved."
+    },
+    {
+      "id": "options-pyproject",
+      "source": "from pydantic import BaseModel\n\nclass Model(BaseModel):\n    value: int\n\ndef run(value):\n    return Model(value=value).dict(exclude_none=True)\n",
+      "dependency": "pyproject",
+      "tests": "from models import run\n\ndef test_contract():\n    assert run(7) == {'value': 7}\n",
+      "held_out": false,
+      "expected": "Supported dump keyword is preserved."
+    },
+    {
+      "id": "raw-requirements",
+      "source": "from pydantic import BaseModel\n\nclass Model(BaseModel):\n    value: int\n\ndef run(value):\n    return Model.parse_raw(str(value)).value\n",
+      "dependency": "requirements",
+      "tests": null,
+      "held_out": false,
+      "expected": "Raw data handling needs semantic review."
+    },
+    {
+      "id": "raw-pyproject",
+      "source": "from pydantic import BaseModel\n\nclass Model(BaseModel):\n    value: int\n\ndef run(value):\n    return Model.parse_raw(str(value)).value\n",
+      "dependency": "pyproject",
+      "tests": null,
+      "held_out": false,
+      "expected": "Raw data handling needs semantic review."
+    },
+    {
+      "id": "copy-requirements",
+      "source": "from pydantic import BaseModel\n\nclass Model(BaseModel):\n    value: int\n\ndef run(value):\n    return Model(value=value).copy(deep=True).value\n",
+      "dependency": "requirements",
+      "tests": "from models import run\n\ndef test_contract():\n    assert run(7) == 7\n",
+      "held_out": false,
+      "expected": "Copy behavior needs semantic review."
+    },
+    {
+      "id": "copy-pyproject",
+      "source": "from pydantic import BaseModel\n\nclass Model(BaseModel):\n    value: int\n\ndef run(value):\n    return Model(value=value).copy(deep=True).value\n",
+      "dependency": "pyproject",
+      "tests": "from models import run\n\ndef test_contract():\n    assert run(7) == 7\n",
+      "held_out": false,
+      "expected": "Copy behavior needs semantic review."
+    },
+    {
+      "id": "custom-requirements",
+      "source": "from pydantic import BaseModel\n\nclass Model(BaseModel):\n    value: int\n\ndef run(value):\n    return Model(value=value).json(indent=2)\n",
+      "dependency": "requirements",
+      "tests": "from models import run\n\ndef test_contract():\n    result = run(7)\n    assert result is not None\n",
+      "held_out": false,
+      "expected": "Indented output needs semantic review."
+    },
+    {
+      "id": "custom-pyproject",
+      "source": "from pydantic import BaseModel\n\nclass Model(BaseModel):\n    value: int\n\ndef run(value):\n    return Model(value=value).json(indent=2)\n",
+      "dependency": "pyproject",
+      "tests": "from models import run\n\ndef test_contract():\n    result = run(7)\n    assert result is not None\n",
+      "held_out": false,
+      "expected": "Indented output needs semantic review."
+    },
+    {
+      "id": "alias-requirements",
+      "source": "from pydantic import BaseModel\n\nclass Model(BaseModel):\n    value: int\n\ndef run(value):\n    return Model(value=value).dict(by_alias=True)\n",
+      "dependency": "requirements",
+      "tests": "from models import run\n\ndef test_contract():\n    assert run(7) == {'value': 7}\n",
+      "held_out": true,
+      "expected": "Alias flag is preserved."
+    },
+    {
+      "id": "alias-pyproject",
+      "source": "from pydantic import BaseModel\n\nclass Model(BaseModel):\n    value: int\n\ndef run(value):\n    return Model(value=value).dict(by_alias=True)\n",
+      "dependency": "pyproject",
+      "tests": "from models import run\n\ndef test_contract():\n    assert run(7) == {'value': 7}\n",
+      "held_out": true,
+      "expected": "Alias flag is preserved."
+    },
+    {
+      "id": "coercion-requirements",
+      "source": "from pydantic import BaseModel\n\nclass Model(BaseModel):\n    value: int\n\ndef run(value):\n    return Model.parse_obj({'value': str(value)}).value\n",
+      "dependency": "requirements",
+      "tests": "from models import run\n\ndef test_contract():\n    assert run(7) == 7\n",
+      "held_out": true,
+      "expected": "Integer string coercion is checked."
+    },
+    {
+      "id": "coercion-pyproject",
+      "source": "from pydantic import BaseModel\n\nclass Model(BaseModel):\n    value: int\n\ndef run(value):\n    return Model.parse_obj({'value': str(value)}).value\n",
+      "dependency": "pyproject",
+      "tests": "from models import run\n\ndef test_contract():\n    assert run(7) == 7\n",
+      "held_out": true,
+      "expected": "Integer string coercion is checked."
+    }
+  ]
+}
